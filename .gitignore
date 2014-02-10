@@ -12,7 +12,7 @@
 *.idx
 *.ilg
 *.ind
-*.ist
+#*.ist
 *.lof
 *.log
 *.lot
