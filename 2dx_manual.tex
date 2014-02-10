@@ -1,0 +1,111 @@
+\documentclass[twoside,a4paper]{refart}
+
+\include{formatAndDefs}
+
+\title{2dx User Manual}
+\author{Marcel Arheit, Sebastian Scherer, Cristina Paulino, \\Xiangyan Zeng and Henning Stahlberg}
+
+\date{\today}
+\emergencystretch1em
+
+\pagestyle{myfootings}
+\markboth{{\twodx} User Manual}{{\twodx} User Manual}
+
+\makeindex 
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+
+\maketitle
+
+\vspace{-15.5em}
+
+\begin{figure}[h]
+	\centering
+	\hspace{25em}
+	\includegraphics[width=.19\textwidth]{2dx_logo.pdf}
+\end{figure}
+
+\vspace{49em}
+
+\begin{figure}[h]
+	\centering
+	\hspace{-3em}
+	\includegraphics[width=.22\textwidth]{cina_logo.pdf}
+\end{figure}
+
+\vspace{-7em}
+
+\begin{figure}[h]
+	\hspace{20em}
+	\centering
+	\includegraphics[width=.3\textwidth]{biozentrum_logo.pdf}
+\end{figure}
+
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\tableofcontents
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\include{intro}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\include{instal}
+\include{project_init}
+\include{gui}
+\include{2d_processing}
+
+
+\include{2d_merge}
+\include{DiffMap}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\include{3d_merge}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\include{2d_ml}
+%\include{tricks}
+%\include{latex_tricks}
+
+\bibliographystyle{ThesisStyleWithEtAl}
+\bibliography{2dx_manual}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\listoffigures
+
+\newpage
+
+\let\oldtwocolumn\twocolumn
+\renewcommand{\twocolumn}[1][]{#1}
+\printindex
+\renewcommand{\twocolumn}[1][]{\oldtwocolumn}
+
+\end{document}
+
+

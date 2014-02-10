@@ -1,0 +1,130 @@
+\usepackage[a4paper,pagebackref,hyperindex=true]{hyperref}
+
+\usepackage{makeidx}
+\usepackage{ifthen}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath,amstext,amssymb}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+
+
+\makeindex
+
+\graphicspath{{images/}}
+
+\usepackage{alltt, parskip, fancyhdr, boxedminipage}
+\usepackage{makeidx, multirow, longtable, tocbibind, amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[usenames]{color}
+\setlength{\headheight}{16pt}
+\setlength{\headsep}{24pt}
+\setlength{\topmargin}{-\headsep}
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{2ex}
+\setlength{\fboxrule}{2\fboxrule}
+\newlength{\BCL} % base class length, for base trees.
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+% Exceptions
+\newcommand{\pysrcexcept}[1]{\textcolor{py@exceptcolour}{\small\textbf{#1}}}
+\newlength{\funcindent}
+\newlength{\funcwidth}
+\setlength{\funcindent}{1cm}
+\setlength{\funcwidth}{\textwidth}
+\addtolength{\funcwidth}{-2\funcindent}
+\newlength{\varindent}
+\newlength{\varnamewidth}
+\newlength{\vardescrwidth}
+\newlength{\varwidth}
+\setlength{\varindent}{1cm}
+\setlength{\varnamewidth}{.3\textwidth}
+\setlength{\varwidth}{\textwidth}
+\addtolength{\varwidth}{-4\tabcolsep}
+\addtolength{\varwidth}{-3\arrayrulewidth}
+\addtolength{\varwidth}{-2\varindent}
+\setlength{\vardescrwidth}{\varwidth}
+\addtolength{\vardescrwidth}{-\varnamewidth}
+\newenvironment{Ventry}[1]%
+ {\begin{list}{}{%
+   \renewcommand{\makelabel}[1]{\texttt{##1:}\hfil}%
+   \settowidth{\labelwidth}{\texttt{#1:}}%
+   \setlength{\leftmargin}{\labelsep}%
+   \addtolength{\leftmargin}{\labelwidth}}}%
+ {\end{list}}
+
+\def\bs{\char'134 } % backslash in \tt font.
+\newcommand{\ie}{i.\,e.,}
+\newcommand{\eg}{e.\,g..}
+\newcommand{\twodx}{\texttt{2dx}}
+\DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+
+% Links in pdf
+\usepackage{color}
+\newcommand{\blue}{ \color{blue} }
+\definecolor{linkcol}{rgb}{0,0,0.4}
+\definecolor{citecol}{rgb}{0.5,0,0}
+
+
+\hypersetup
+{
+bookmarksopen=true,
+pdftitle="2dx Manual",
+pdfauthor="2dx.org",
+pdfsubject="User manual for 2dx", %subject of the document
+%pdftoolbar=false, % toolbar hidden
+pdfmenubar=true, %menubar shown
+pdfhighlight=/O, %effect of clicking on a link
+colorlinks=true, %couleurs sur les liens hypertextes
+pdfpagemode=None, %aucun mode de page
+pdfpagelayout=SinglePage, %ouverture en simple page
+pdffitwindow=true, %pages ouvertes entierement dans toute la fenetre
+linkcolor=linkcol, %couleur des liens hypertextes internes
+citecolor=citecol, %couleur des liens pour les citations
+urlcolor=linkcol %couleur des liens pour les url
+}
+
+\newcommand{\subfigureautorefname}{\figureautorefname}
+
+\def\sectionautorefname{Chapter}
+\def\subsectionautorefname{Section}
+\def\subsubsectionautorefname{Section}
+\def\algorithmautorefname{Algorithm}
+
+\usepackage{hyperref}
+
+\font\capfonta=cmbx12 at 32 pt % or yinit, or...?
+\newbox\capbox \newcount\capl \def\a{A}
+\def\docappar{\medbreak\noindent\setbox\capbox\hbox{\capfonta\a\hskip0.10em}%
+\hangindent=\wd\capbox%
+\capl=\ht\capbox\divide\capl by\baselineskip\advance\capl by1\hangafter=-\capl%
+\hbox{\vbox to8pt{\hbox to0pt{\hss\box\capbox}\vss}}}
+\def\cappar{\afterassignment\docappar\noexpand\let\a }
+
+
+
+% nicer backref links
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+(Not cited.)%
+\or
+(Cited on page~#2.)%
+\else
+(Cited on pages~#2.)%
+\fi}
+\renewcommand*{\backrefsep}{, }
+\renewcommand*{\backreftwosep}{ and~}
+\renewcommand*{\backreflastsep}{ and~}
+
+
+
