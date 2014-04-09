@@ -225,6 +225,8 @@ The compilation of {\twodx} has some additional dependencies compared with the p
 			\texttt{export PATH='PATH\_TO\_SDK'/QtSDK/Desktop/Qt/4.8.0/} \texttt{gcc/bin:\$PATH} \newline where you replace \texttt{'PATH\_TO\_SDK'} by your concrete QtSDK installation path.
 			\item \textbf{Qt4 on Linux} On Ubuntu you can just install \texttt{libqt4-dev} with all the automatically resolved dependencies by means of the native package manager. On Fedora the required package is called \texttt{qt-devel} with \texttt{qtwebkit-devel} as additional required dependency.
 		\end{itemize}
+		
+	\item \textbf{libboost}
 \end{itemize}
 
 Note that the name of the required libraries depends on the used operating system. In case you have a missing library the compilation error should be somewhat. Thus resolving the missing dependency should be easy. If you run into troubles don't hesitate to contact us for support.
@@ -234,13 +236,13 @@ Note that the name of the required libraries depends on the used operating syste
 The compilation itself is straightforward as we provide a simple script which coordinates all the required steps:
 
 \begin{enumerate}
-	\item Uncompress the source archive which you have downloaded from our webpage either by means of the GUI provided by your operating system or use the following command in the terminal:
+	\item Download the latest version from githug with. Requires that you have git on your system
 	\newline
-	\texttt{tar -xvf 2dx\_nightly\_source.tar.gz}
+	\texttt{git clone https://github.com/C-CINA/2dx.git}
 	
-	\item Change into the extracted content of the archive with:
+	\item Change into the generated folder:
 		\newline 
-	\texttt{cd 2dx\_nightly\_source}
+	\texttt{cd 2dx}
 
 	\item {\twodx} is compiled by running the \texttt{build\_all} script, which take between zero and two arguments. The list below shows you all the possibilities:
 	\begin{itemize}
