@@ -205,6 +205,10 @@ The following manual guides you through the installation process on RedHeat-like
 \label{sec:install_source}
 In this section we explain how to compile {\twodx} on your own machine, which always slightly depends on your specific operating system and the version of the installed software. Thus we only insure that our manual works for Ubuntu 12.04, Fedora 17 and OSX.10.7. Probably some dependencies slightly change for other platforms but the basic concept stays the same. An additional challenge is to know the correct linux specific package name. We state all dependencies on Linux in term of the Ubuntu/Debian naming convention and we give some additional hints for RedHeat-based systems.
 
+For OSX we suggest that you install the dependencies via macports (\url{http://www.macports.org}). 
+
+The only supported compilers are \texttt{gcc} and \texttt{icc}. On mac please install \texttt{gcc4X} via macports and activate the installed compiler with \texttt{sudo port select --set gcc mp-gcc4X}. Note that \texttt{X} stands for the particular version you installed. The compilation process was successfully tested with \texttt{gcc48} and \texttt{gcc49}.
+
 \subsubsection{Dependencies}
 \index{Dependencies}
 The compilation of {\twodx} has some additional dependencies compared with the precompiled binary packages. Below you find the list of all dependencies:
@@ -254,7 +258,9 @@ The compilation itself is straightforward as we provide a simple script which co
 	\item Once you successfully compiled {\twodx} you can launch {\twodx}\texttt{\_merge} by changing into the \texttt{bin/} directory of the install directory and typing \texttt{./2dx\_merge}.
 	
 	\item In order to be able to start {\twodx} in the terminal by typing \texttt{2dx} you should generate a symbolic link to the executable of {\twodx}\texttt{\_merge} by the following command:\newline
-	\texttt{ln -s 'YOUR\_INSTALL\_PATH'/bin/2dx\_merge /usr/bin/2dx}
+	\texttt{ln -s 'YOUR\_INSTALL\_PATH'/bin/2dx\_merge /usr/bin/2dx}.
+	
+	Alternatively we suggest to "source" the binary folder by adding a line similar to \texttt{export PATH=\$PATH:/'YOUR\_INSTALL\_PATH'/bin} to your .profile or .bash\_rc file.
 	
 \end{enumerate}
 
