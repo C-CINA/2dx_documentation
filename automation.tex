@@ -58,17 +58,19 @@ Starting the automation software is done by executing the command \texttt{2dx\_a
 
 Once you loaded or generated an optimal config-file, the  automatic processing is finally launched by clicking on the \textit{Launch automation} button (top-right). Note that in case there are so far unprocessed images in the input folder, these images will be processed first.
 
-
 \subsection{2dx\_automator}
-
-asdf  \autoref{fig:auto} adf.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{auto.pdf}
-	\caption{2dx\_automator}
+	\caption{2dx\_automator graphical user interface}
 	\label{fig:auto}
 \end{figure}
+
+When opening the 2dx\_automator for the first time, all fields are empty. These white squares will be populated once the images are processed, see \autoref{fig:auto}. The top row of the GUI states in which folders the automation is running and there you also can launch and stop the automatic processing, i.e. periodically checking for new images. The left panel features some processing options (detailed in \autoref{sec:auto_tricks}) and a list providing an overview of all images in the project. The right panel (detailed in \autoref{fig:auto2}) provides all required intermediate processing results, which all to judge the reliability of the image processing of the selected image. 
+
+In case you observe that image processing failed for one particular image, you can open 2dx\_image for the corresponding image by clicking on \textit{"Launch 2dx\_image"}. Provided you want to apply the tuned processing parameter for all future image, just save the new config parameter set as project-wide default. Once you close 2dx\_image (after fixing the processing) you have to regenerate the diagnostic images for this particular image by clicking on \textit{"Regenerate Diagnostic Images"}. Note that this can take up to 30 sec. 
+
 
 \begin{figure}
 	\centering
@@ -79,18 +81,20 @@ asdf  \autoref{fig:auto} adf.
 
 
 \subsection{Advanced tricks}
+\label{sec:auto_tricks}
+
+Here we discuss some advanced automation tricks, accessible via the available buttons.
 
 \begin{description}
-	\item [Second lattice processing]
-	\item [Manual processing intervention] 
-	\item [Comment editing]
-	\item [Updating image maps]
-	\item [Reprocess an image]
-	\item [Project statistics]
-	\item [IQ-Stat analysis]
-	\item [Configuration file handling] 
+	\item [Second lattice processing]: 2dx\_image by default tries to find two crystal lattices, given there are to (usually originating from tubular crystals). The top-left region of the central widget contains the related functions. There you can select whether the second lattice should be displayed or not. In case the second lattice was found correctly it might be worth to processes this lattice automatically as well. Clicking on \textit{"Process Second Lattice"} clones the image directory, swaps the lattices and processes the cloned image automatically. Note that the result will not be shown in the GUI, but will be directly in the 2dx project. For instance processing the second lattice of image \textit{"auto\_12"} will generate a new image called \textit{"auto\_12\_c1"}. 
+	\item [Comment editing] 2dx\_automator provides a instant comment editing tool. You can add or edit the comment field via \textit{"Edit Comment"}. The updated comment is synchronised with the config file of the selected image.
+	\item [Updating image maps] For instance after 3D merging it might be a good idea to regenerate the projection maps given their updated phase origins. You can regenerate all projection maps of the project by means of \textit{"Regenerate ALL Maps"}.
+	\item [Reprocess an image] \textit{"Reprocess Image"} deletes all processing results for the selected image, copies the new config file and reprocesses the image. This function is particular useful to apply an updated config file to an image.
+	\item [Project statistics] The judge the completeness and diversity of the recorded data, clicking on \textit{"Show Project Staticstics"} produces a project statics overview (example show in \autoref{ig:auto_stat}). Missing tilt angles are defocus values can be found efficiently by analysing the produces charts.
+	\item [\textit{"Use images"}] Only selected images are used to generate the projection statistics overview plots.
+	\item [IQ-Stat analysis] To judge the quality and distribution of the diffraction spots \textit{"Show IQ-Plot"} opens the \textit{PLOTRES}-file of the selected image.
+	\item [Configuration file handling] Under \textit{Configuration > Show config file} and  \textit{Configuration > Show processing parameters} you can view the full underlying config file, respectively only the extracted processing parameters.
 \end{description}
-
 
 
 \begin{figure}
@@ -99,3 +103,6 @@ asdf  \autoref{fig:auto} adf.
 	\caption{Project stat}
 	\label{fig:auto_stat}
 \end{figure}
+
+\subsection{Credit}
+Please don't forget to cite \cite{scherer20142dx_automator} if you obtained your results by means of 2dx\_automator.
