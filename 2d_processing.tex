@@ -160,33 +160,6 @@ This lattice-based tilt geometry is only reliable for larger tilt angles, which 
 
 
 
-\subsubsection{Determine reference area}
-\label{sec:reference}
-\index{Determine reference area}	
-
-For the upcoming unbend processes you need to define a reference, which should be the best crystalline area of your image. If the image recording and scanning was done carefully the centre will be close to the actual centre of the digitized array. Nevertheless, checking the live-FFT on your image is often beneficial, especially for specimens that are not perfectly ordered. Should this not be the case you can select your reference area manually. 
-Open the \textit{Non-Masked Image} in the Image panel. This will show the source image in the full screen viewer. You can zoom in on the image with the comma key, and zoom out with the period key or via the menu. Zoom out to see the full picture. Right-click on the image under \textit{Selection based FFT} select \textit{FFT of Selection} as shown in \autoref{fig:2d_fftmenu}. 
-	
-	
-		\begin{figure}[H]
-		\centering
-		\includegraphics[width=.65\textwidth]{2d_fftmenu.pdf}
-		\caption{FFT Menu}
-		\label{fig:2d_fftmenu}
-	\end{figure}
-	
-	Now you can select a rectangular area on the image by dragging the left-mouse button and the Fourier transformation of the selection is then displayed. You can also displace the selection with the right mouse button. The corresponding screenshot is shown in \autoref{fig:2d_fft}.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=.99\textwidth]{2d_fft.pdf}
-		\caption{FFT live view}
-		\label{fig:2d_fft}
-	\end{figure}
-	
-Select the best area, which should show the best/most spots on the live FFT. Press the "I" key to note the coordinate. Leave the full screen viewer (press Escape) and return to the main window. Insert the coordinates of your chosen reference area in the \textit{Get Spotlist for Unbend I} script. 
-
-
 
 \subsubsection{Unbend}
 \label{sec:Unbend}
